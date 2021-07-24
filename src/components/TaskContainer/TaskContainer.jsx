@@ -1,11 +1,13 @@
 import React, { useEffect, useContext } from "react";
 import axios from "axios";
 import AppContext from "../../store/AppContext";
+import TaskList from "../TaskList/TaskList";
+import "./TaskContainer.scss";
 
 const TaskContainer = () => {
   const state = useContext(AppContext);
 
-  //llamado a backend
+  // llamado a backend
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const loadTask = async () => {
     try {
@@ -23,7 +25,11 @@ const TaskContainer = () => {
     //console.log("David");
     loadTask();
   }, [loadTask]);
-  return <p> TaskContainer </p>;
+  return (
+    <div className="tasksContainer">
+      <TaskList />
+    </div>
+  );
 };
 
 export default TaskContainer;
