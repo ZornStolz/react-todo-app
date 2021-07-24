@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import AppContext from "../../store/AppContext";
+import TaskItem from "../TaskItem/TaskItem";
 import "./TaskList.scss";
 
 const TaskList = () => {
@@ -8,7 +9,12 @@ const TaskList = () => {
   return (
     <div className="taskList">
       {state.tasks.map((task) => (
-        <p>{task.title}</p>
+        <TaskItem
+          key={task.id}
+          id={task.id}
+          completed={task.completed}
+          title={task.title}
+        />
       ))}
     </div>
   );

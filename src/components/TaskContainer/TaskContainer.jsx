@@ -24,7 +24,7 @@ const TaskContainer = () => {
   useEffect(() => {
     //console.log("David");
     loadTask();
-  }, [loadTask]);
+  }, []);
   return (
     <div className="tasksContainer">
       <TaskList />
