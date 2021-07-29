@@ -20,7 +20,7 @@ const TaskItem = ({ id, completed, title }) => {
           onChange={(event) => handleCheck(event)}
         />
       </div>
-      <p> {id + "-" + completed + "-" + title} </p>
+      <p> {title} </p>
     </Card>
   );
 };
