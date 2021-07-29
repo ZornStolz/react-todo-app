@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from "react";
 import axios from "axios";
 import AppContext from "../../store/AppContext";
 import TaskList from "../TaskList/TaskList";
+import TaskForm from "../TaskForm/TaskForm";
 import "./TaskContainer.scss";
 
 const TaskContainer = () => {
@@ -24,9 +25,11 @@ const TaskContainer = () => {
   useEffect(() => {
     //console.log("David");
     loadTask();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className="tasksContainer">
+      <TaskForm />
       <TaskList />
     </div>
   );
