@@ -20,6 +20,19 @@ export const AppContextWrapper = (props) => {
     setTasks(tasksUpdated);
   };
 
+  const setTaskTitle = (id, newTitle) => {
+    const tasksUpdated = tasks.map((task) => {
+      if (task.id === id) {
+        return {
+          ...task,
+          title: newTitle,
+        };
+      }
+      return task;
+    });
+    setTasks(tasksUpdated);
+  };
+
   const saveTask = (title) => {
     const newTask = {
       id: uuid.v1(),
@@ -43,7 +56,14 @@ export const AppContextWrapper = (props) => {
   };
 
   //Json
-  const state = { tasks, setTasks, setTaskStatus, saveTask, sortTasks };
+  const state = {
+    tasks,
+    setTasks,
+    setTaskStatus,
+    saveTask,
+    sortTasks,
+    setTaskTitle,
+  };
 
   return (
     <AppContext.Provider value={state} displayName="AppContext">
