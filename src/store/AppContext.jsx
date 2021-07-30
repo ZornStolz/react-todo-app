@@ -33,6 +33,11 @@ export const AppContextWrapper = (props) => {
     setTasks(tasksUpdated);
   };
 
+  const deleteTask = (taskId) => {
+    const tasksArr = tasks.filter((task) => task.id !== taskId);
+    setTasks(tasksArr);
+  };
+
   const saveTask = (title) => {
     const newTask = {
       id: uuid.v1(),
@@ -63,6 +68,7 @@ export const AppContextWrapper = (props) => {
     saveTask,
     sortTasks,
     setTaskTitle,
+    deleteTask,
   };
 
   return (

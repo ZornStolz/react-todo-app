@@ -59,7 +59,7 @@ const TaskItem = ({ id, completed, title }) => {
             <CreateIcon />
           </IconButton>
         )}
-        <IconButton color="secondary" onClick={() => console.log("eliminar")}>
+        <IconButton color="secondary" onClick={() => state.deleteTask(id)}>
           <DeleteIcon />
         </IconButton>
       </div>
